@@ -1,3 +1,7 @@
 books/
 __pycache__/
 .env
+.venv/
+.vscode/
+*.pyc
+db.sqlite3
