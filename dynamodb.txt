@@ -1,0 +1,41 @@
+aws dynamodb scan
+pk -> Partition Key
+sk -> Sort key
+
+aws dynamodb put-item
+
+aws dynamodb get-item
+aws dynamodb update-item
+###
+update-expression ::=
+	[Set action [,action] ...]
+	[Remove action [,action] ...]
+	[ADD action [,action] ...]
+	[DELETE action [,action] ...]
+
+###
+aws dynamodb query \
+	--table-name Employees \
+	--key-condition-expression 'LoginAlias = :alias' \
+	--expression-attribute-values '{
+	":alias": {"S": "johns"}
+	}' \
+	--projection-expression "LastName, Skills" \
+	--endpoint-url http://localhost:8000
+
+#dynamodb does not allow bluk delete
+
+aws dynamodb delete \
+	--table-name Employees \
+	--key '{"LoginAlias" : {"S":"irenes"}}' \
+	--endpoint-url
+
+aws dynamodb batch-write-item \
+	--request-items file://somefileurl
+	--endpoint-url somelocalhosturl
+
+
+
+
+	
+

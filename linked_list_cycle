@@ -1,0 +1,19 @@
+digraph {
+	1 [label=1]
+	2 [label=2]
+	3 [label="3 (start of loop)" color=red fillcolor=lightpink style=filled]
+	4 [label=4]
+	5 [label=5]
+	6 [label=6]
+	7 [label=7]
+	8 [label=8]
+	1 -> 2
+	2 -> 3
+	3 -> 4
+	4 -> 5
+	5 -> 6
+	6 -> 7
+	7 -> 8
+	8 -> 3 [label="back to start" color=blue]
+	fontsize=18 label="Floyd's Cycle Detection: Start of Loop is Node 3"
+}

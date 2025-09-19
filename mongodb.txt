@@ -1,0 +1,23 @@
+mongosh
+use tutorial
+db.users.insert({userid:1})
+for (i=0, i<2000, i++){
+	db.users.insert({username:`user_${i}`})
+}
+
+db.users.find({userid:1})
+db.users.update({userid:1}, {username:'shan'}) # put method
+
+db.users.createIndex({userid:1})
+
+for (i=0, i<2000, i++){
+	db.numbers.insert({number:i})
+}
+
+db.numbers.find({number:{$gt: 1995}}).explain("executionStats") # explains how search is performed 
+
+db.stats() #db statistics
+db.numbers.stats()
+
+db.numbers.getIndex() # returns list of indexs, primary and secondary
+https://axet.nttdata.com/flows/frontend/#/login?access_token=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOjMyOTAsInVuaXF1ZV9uYW1lIjoiU2hhamFoYW4uREBudHRkYXRhLmNvbSIsImltcGVyc29uYXRlIjpmYWxzZSwicm9sZXMiOlsiUk9MRV9PUEVSQURPUiJdLCJuYW1lIjoiU2hhamFoYW4iLCJpc3MiOiJheGV0LXByb2QiLCJsYXN0X25hbWUiOiJEIiwib2t0YV9pZCI6IjAwdTltMW42NGJVNG1EMmJoNDE3IiwicmVnaW9uIjoic2VydmljZXMtb25lbnR0IiwiZXhwIjoxNzQ5NTkxOTEwLCJpYXQiOjE3NDk1NzM5MTAsImp0aSI6IjQ2MjhhNGEzLTM0ZTYtNDQ2Ny1iZDQ5LThkYjQwZTUyNzNkOSJ9.pgcFu6sVSkIPlKKxL18KcndZROYkzQ-6t0a_AK0nwXP9QZmn9vxiNK5j0hP1jh2rLN3UpQ-PbN0IzX-Xub-eRA

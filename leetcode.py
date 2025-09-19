@@ -1,0 +1,44 @@
+# leetcode problem number 1
+# Input: nums = [2,7,11,15], target = 9
+# Output: [0,1]
+# Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
+nums = [2, 7, 11, 15]
+target = 9
+
+
+# def twosum(nums, target):
+#     """
+#     the idea behind two sum
+#     define nums_complement={}
+#     do a for loop on nums using index i
+#     find the complement=target-nums[i]  | check if complement is present in nums_complement
+#     if present, return index i, and value of nums_complement using complement as key
+#     if not present, (store the nums value at the index i as key), (and i as value)
+#     """
+#     nums_complement = {}
+#     print(f'nums :{nums}')
+#     for i in range(len(nums)):
+#         complement = target-nums[i]
+#         if complement in nums_complement:
+#             return nums_complement[complement], i
+#         nums_complement[nums[i]] = i
+#         print(f'complement :{complement}, nums_complement :{nums_complement}')
+def twosum(nums, target):
+    nums_compliment = {}
+    for item in range(len(nums)):
+        com = target-nums[item]
+        if com in nums_compliment:
+            return item, nums_compliment[com]
+        nums_compliment[nums[item]] = item
+
+
+# leet code 217 : contains duplicate
+def find_duplicate(nums):
+    # optimal solution
+    return len(set(nums)) == len(nums)
+    # brute force solution
+    for i in range(len(nums)):
+        for j in range(i+1, len(nums)):
+            if nums[i] == nums[j]:
+                return True
+    return False

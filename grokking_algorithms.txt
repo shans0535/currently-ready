@@ -1,0 +1,35 @@
+def qsort(array):
+    if len(array)<2
+	return array
+    pivot=array[0]
+    less=[]
+    greater=[]
+    for i in array[1:]
+      if i<pivot:
+        less.append(i)
+      else:
+        greater.append(i)
+    return qsort(less)+[pivot]+qsort(greater)
+
+def fib_generator(n):
+    a=0
+    b=1
+    for i in range(n):
+	yield a
+        a,b=b,b+a
+
+
+def binary_search(array,item):
+    low=0
+    high=len(array)-1
+    while low<=high:
+	mid=(high-low)/2
+	guess=array[mid]
+	if item==guess:
+	    return mid
+        elif item<guess:
+            high=mid-1
+       	else:
+            low=mid+1
+    return None
+

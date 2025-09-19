@@ -1,0 +1,16 @@
+chapter 2
+Container sequences
+	list, tuple and collections.deque can hold items of different types.
+	they store references to  physical value
+Flat sequences
+	str, bytes, bytearray, memoryview and array.array hold items of one type
+	they store actual physical value
+
+Another way of grouping sequence types is by mutability:
+Mutable sequences
+	list, bytearray, array.array, collections.deque and memoryview
+Immutable sequences
+	tuple, str and bytes
+
+Tuples - immutable list and also records with no fields
+
